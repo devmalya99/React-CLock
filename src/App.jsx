@@ -5,11 +5,16 @@ import { useState } from 'react'
 
 
 function App() {
-  const[time,setTime] = useState(new Date().toLocaleTimeString())
+  
+  setInterval(getTime,2000);
+  const now=new Date().toLocaleTimeString()
 
-const getTime =()=>
+  const[time,setTime] = useState(now)
+
+function getTime()
 {
-  setTime(new Date().toLocaleTimeString())
+  const newTime=new Date().toLocaleTimeString();
+  setTime(newTime)
 }
 
   return (
